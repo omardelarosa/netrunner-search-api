@@ -1,0 +1,27 @@
+{
+  "name": "nrdb-search-api",
+  "version": "1.0.0",
+  "description": "a search API for NetrunnerDB that supports Elasticsearch DSL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo 'TODO: add testing'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "elasticsearch": "^8.2.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "lodash": "^3.10.1",
+    "logfmt": "^1.2.0",
+    "mongo-elasticsearch": "^1.0.0",
+    "mongodb": "^2.0.46",
+    "q": "^1.4.1",
+    "request": "^2.65.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+*.swp
+*.swo
+Capfile
+Gemfile
+Gemfile.lock
