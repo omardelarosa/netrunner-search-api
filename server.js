@@ -21,7 +21,7 @@ module.exports.start = function(done){
   // bind routes
   routes(app);
 
-  var port = Number(process.env.PORT || 5001);
+  var port = Number(process.env.PORT || 5010);
 
   var server = app.listen(port, function(){
     console.log('Listening on port ' + port);
