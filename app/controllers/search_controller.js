@@ -31,7 +31,7 @@ var formatResults = function (results) {
   if (results.hits && results._shards.total > 0) {
     return _.map(
       _.filter(results.hits.hits, function (h) {
-        return h._score >= 1.0;
+        return h._score >= 0.5;
       }), function (h) {
         return h._source;
       });
