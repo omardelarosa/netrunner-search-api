@@ -27,6 +27,19 @@ var disconnectFromES = function () {
   });
 };
 
+var formatResults = function (results) {
+  if (results.hits && results._shards.total > 0) {
+    return _.map(
+      _.filter(results.hits.hits, function (h) {
+        return h._score >= 1.0;
+      }), function (h) {
+        return h._source;
+      });
+  } else {
+    return [];
+  }
+};
+
 module.exports = {
   byQueryString: function (req, res, next) {
     if (!req.params || !req.params.query) {
@@ -39,7 +52,7 @@ module.exports = {
         q: q
       }).then(function(esResponse) {
         disconnectFromES().then(function(){
-          res.send(esResponse.hits); 
+          res.send(formatResults(esResponse)); 
         });
       }, function (err) {
         console.log('Error:');
